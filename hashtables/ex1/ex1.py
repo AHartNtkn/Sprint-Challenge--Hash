@@ -1,11 +1,11 @@
 def get_indices_of_item_weights(weights, length, limit):
-    dict = {}
+    ht = {}
 
     for i, w in enumerate(weights):
-        dict[w] = i
+        ht[w] = i
 
     for i, w in enumerate(weights):
-        r = dict.get(limit - w, None)
+        r = ht.get(limit - w, None)
         if r:
             return [ r, i ]
 
