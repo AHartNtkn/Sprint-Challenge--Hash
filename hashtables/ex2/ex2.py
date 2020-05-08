@@ -6,9 +6,18 @@ class Ticket:
 
 
 def reconstruct_trip(tickets, length):
-    
-    """
-    YOUR CODE HERE
-    """
+    ht = {}
+    route = [None] * length
 
+    for t in tickets:
+        ht[t.source] = t.destination
+
+    current_city = ht["NONE"]
+    i = 0
+    while current_city != "NONE":
+        route[i] = current_city
+        current_city = ht[current_city]
+        i += 1
+    
+    route.pop()
     return route
