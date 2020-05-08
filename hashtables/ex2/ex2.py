@@ -18,6 +18,6 @@ def reconstruct_trip(tickets, length):
         route[i] = current_city
         current_city = ht[current_city]
         i += 1
+    route[i] = "NONE"
     
-    route.pop()
     return route
