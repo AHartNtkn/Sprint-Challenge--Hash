@@ -7,11 +7,7 @@ def intersection(arrays):
                 ht[i] = 0
             ht[i] += 1
 
-    result = []
-
-    for i, n in ht.items():
-        if n == len(arrays):
-            result.append(i)
+    result = [ i for i, n in ht.items() if n == len(arrays) ]
 
     return result
 
